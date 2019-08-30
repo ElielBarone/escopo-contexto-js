@@ -4,15 +4,15 @@ function myFx(){
 }
 
 //2 - vamos simplificar, remova o nome da função
-const myFx = function(){
+const myFxConstant = function(){
     console.log("Escopo Isolado da função anônima setada na variável.");
 }
 
 //Execução comum
-myFx();
+myFxConstant();
 
 //3 - Uma alternativa que produz o mesmo resultado
-(myFx)();
+(myFxConstant)();
 
 //4 - Agora vamos simplificar ainda mais, declarando a função anonimamente.
 (function(){
@@ -21,5 +21,9 @@ myFx();
 
 //5 - Enfim executamos a função anônima, adicionando um parênteses a frente da declaração
 (function(){
+    var youShallNotPass = "O escopo glogal não acessa este escopo, evitando colisões"
     console.log("Nosso código executado imediatamente e protegido pelo escopo da função");
 })();
+
+//IIFE
+(function(){})();
